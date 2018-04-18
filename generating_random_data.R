@@ -3,6 +3,7 @@ used_packages <- c("bindrcpp", "data.table", "datasets", "dplyr",
                    "lubridate", "methods", "parallel", "stats", "utils")
 lapply(used_packages, require, character.only = TRUE)
 
+flog.info("_author_ : Oğuzhan YEDİEL")
 # It was taken in consideration Google R Style Guide 
 # for codes to be read easily, shared, and verified!
 # For example; Maximum Line Length = 80
