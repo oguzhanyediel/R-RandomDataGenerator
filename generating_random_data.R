@@ -3,7 +3,7 @@ used_packages <- c("bindrcpp", "data.table", "datasets", "dplyr",
                    "lubridate", "methods", "parallel", "stats", "utils")
 lapply(used_packages, require, character.only = TRUE)
 
-flog.info("_author_ : Oğuzhan YEDİEL")
+flog.info("__author__ : Oğuzhan YEDİEL")
 # It was taken in consideration Google R Style Guide 
 # for codes to be read easily, shared, and verified!
 # For example; Maximum Line Length = 80
@@ -16,7 +16,6 @@ restaurant_list <- as.data.frame(restaurant_name)
 restaurant_list$restaurant_id <- seq(1:10)
 restaurant_list$restaurant_locx <- round(runif(10, min = 0, max = 1), 4)
 restaurant_list$restaurant_locy <- round(runif(10, min = 0, max = 1), 4)
-
 
 customer=c()
 for(i in 1:5000) {
@@ -64,7 +63,6 @@ product_list$product_expiration_date <- sample(seq(as.Date('2018/01/01'),
                                                    by="day"), 
                                                100, 
                                                replace = TRUE)
-
 food=c()
 for(i in 1:100) {
   food[i] <- paste("Food", i)
@@ -85,7 +83,6 @@ for(i in 1:nrow(food)) {
                                                             max = 10)),1))
 }
 
-
 restaurant_food_price = data.frame()
 x = c(min(restaurant_list$restaurant_id):max(restaurant_list$restaurant_id))
 for(i in 1:max(restaurant_list$restaurant_id)) {
@@ -101,7 +98,6 @@ for(i in 1:max(restaurant_list$restaurant_id)) {
 restaurant_food_price$food_price <- sample(10:100, 
                                            nrow(restaurant_food_price), 
                                            replace = TRUE)
-
 
 restaurant_stock = data.frame()
 for(i in 1:nrow(restaurant_food_price)) {
@@ -355,6 +351,6 @@ restaurant_stock$used_amount <-
   restaurant_stock$product_stock - restaurant_stock$updated_product_stock
 restaurant_stock$week_number <- restaurant_stock$week_number + 1
 restaurant_stock$product_stock <- NULL
-colnames(restaurant_stock) <- c("restaurant_id","product_id",
-                                "week_number","used_amount","product_stock")
+colnames(restaurant_stock) <- c("restaurant_id", "product_id",
+                                "week_number", "used_amount", "product_stock")
 restaurant_stock <- restaurant_stock[,c(1,2,5,3,4)]
