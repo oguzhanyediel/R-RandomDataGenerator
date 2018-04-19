@@ -353,5 +353,6 @@ restaurant_stock$used_amount <-
 restaurant_stock$week_number <- restaurant_stock$week_number + 1
 restaurant_stock$product_stock <- NULL
 colnames(restaurant_stock) <- c("restaurant_id", "product_id",
-                                "week_number", "used_amount", "product_stock")
+                                "week_number", "used_amount", 
+                                "product_stock")
 restaurant_stock <- restaurant_stock[,c(1,2,5,3,4)]
