@@ -342,7 +342,8 @@ temp_table$updated_product_stock <-
 for_updated_stock <- temp_table[,c("restaurant_id","product_id",
                                    "updated_product_stock")]
 restaurant_stock <- merge(restaurant_stock, for_updated_stock, 
-                          by=c("restaurant_id","product_id"), all.x = TRUE)
+                          by=c("restaurant_id","product_id"), 
+                          all.x = TRUE)
 restaurant_stock$updated_product_stock <- 
   ifelse(is.na(restaurant_stock$updated_product_stock) == TRUE, 
          restaurant_stock$product_stock,
